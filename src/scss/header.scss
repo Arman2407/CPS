@@ -1,0 +1,80 @@
+.header {
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  background-color: #fff;
+
+  @media (min-width: 1440px) {
+    display: none;
+  }
+
+  .menu-select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 88px;
+    border-bottom: 1px solid #d9fff5;
+
+    @media (min-width: 768px) {
+      padding: 0 8px;
+    }
+
+    .select-list__burger,
+    .select-list__contacts {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      padding-left: 0px;
+    }
+
+    .select-list__burger > button {
+      background: #ffffff;
+      border: white;
+      padding: 0px;
+      margin-left: 16px;
+    }
+
+    .select-list__contacts > li {
+      padding-right: 16px;
+    }
+
+    .select-list__contacts > li > button {
+      background: #ffffff;
+      border: white;
+      padding: 0px;
+    }
+  }
+
+  .menu-select__logo::before {
+    @media (min-width: 768px) {
+      content: "";
+      width: 2px;
+      height: 32px;
+      border-radius: 1px;
+      background-color: #eaeaea;
+      display: inline-block;
+      vertical-align: super;
+      margin-right: 16px;
+    }
+  }
+
+  .list-repair::before {
+    content: "";
+    width: 2px;
+    height: 32px;
+    border-radius: 1px;
+    background-color: #eaeaea;
+    display: inline-block;
+    margin-right: 16px;
+  }
+
+  .list-call,
+  .list-chat,
+  .list-profile {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+}

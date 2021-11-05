@@ -1,17 +1,60 @@
-$bgColor: #24292e;
-$text: #fff;
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-@font-face {
-  font-family: 'Comic';
-  src: url('../fonts/comic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
-  padding: 1rem;
-  margin: 0;
-  font-family: Comic, sans-serif;
-  background-color: $bgColor;
-  color: $text;
+  font-family: "TT Lakes", sans-serif;
+  margin: 0px;
+  min-width: 320px;
+  scroll-behavior: smooth;
+  background-color: #f8f8f8;
 }
+@media (min-width: 1440px) {
+  body {
+    background: #f8f8f8;
+  }
+}
+
+.global-block {
+  @media (min-width: 1440px) {
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
+
+.main-inform {
+  background-color: #f8f8f8;
+}
+
+.main-inform__blur {
+  position: fixed;
+  z-index: -1;
+  opacity: 0;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+
+  &--active-blur {
+    z-index: 50;
+    opacity: 0.9;
+  }
+}
+
+@import url(../fonts/TTLakes/TTLakes.css);
+@import "sidebar";
+@import "main";
+@import "header";
+@import "footer";
+@import "slider";
+@import "modal-window";

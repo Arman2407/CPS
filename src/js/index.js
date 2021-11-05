@@ -1,3 +1,9 @@
 import '../scss/style.scss';
 
-console.log('Works!');
+import { sidebar } from './sidebar';
+import { sliderSwiper } from './slider';
+import { popup } from './modal-window';
+
+sidebar();
+sliderSwiper();
+popup();
