@@ -1,0 +1,1027 @@
+@font-face {
+  font-family: "TT Lakes";
+  src: url(./fonts/TTLakes-Regular.eot);
+  src: local("TT Lakes Regular"), local("TTLakes-Regular"),
+    url(./fonts/TTLakes-Regular.eot?#iefix) format("embedded-opentype"),
+    url(./fonts/TTLakes-Regular.woff) format("woff"),
+    url(./fonts/TTLakes-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TT Lakes";
+  src: url(./fonts/TTLakes-Medium.eot);
+  src: local("TT Lakes Medium"), local("TTLakes-Medium"),
+    url(./fonts/TTLakes-Medium.eot?#iefix) format("embedded-opentype"),
+    url(./fonts/TTLakes-Medium.woff) format("woff"),
+    url(./fonts/TTLakes-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TT Lakes";
+  src: url(./fonts/TTLakes-Bold.eot);
+  src: local("TT Lakes Bold"), local("TTLakes-Bold"),
+    url(./fonts/TTLakes-Bold.eot?#iefix) format("embedded-opentype"),
+    url(./fonts/TTLakes-Bold.woff) format("woff"),
+    url(./fonts/TTLakes-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@charset "UTF-8";
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+body {
+  font-family: "TT Lakes", sans-serif;
+  margin: 0px;
+  min-width: 320px;
+  scroll-behavior: smooth;
+  background-color: #f8f8f8; }
+
+@media (min-width: 1440px) {
+  body {
+    background: #f8f8f8; } }
+
+@media (min-width: 1440px) {
+  .global-block {
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto; } }
+
+.main-inform {
+  background-color: #f8f8f8; }
+
+.main-inform__blur {
+  position: fixed;
+  z-index: -1;
+  opacity: 0;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s; }
+  .main-inform__blur--active-blur {
+    z-index: 50;
+    opacity: 0.9; }
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -110%;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 61;
+  transition: all 400ms linear; }
+  @media (min-width: 361px) {
+    .sidebar {
+      width: 320px;
+      box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 16px 0px 52px rgba(14, 24, 80, 0.2); } }
+  @media (min-width: 1440px) {
+    .sidebar {
+      position: sticky;
+      min-width: 320px;
+      height: 100vh;
+      box-shadow: none;
+      border-left: 1px solid #d9fff5;
+      border-right: 1px solid #d9fff5;
+      z-index: 1; } }
+  .sidebar__flex-block {
+    flex-direction: column;
+    align-items: stretch;
+    height: 100%;
+    padding: 18px 24px 0px; }
+    @media (min-width: 1440px) {
+      .sidebar__flex-block {
+        padding-top: 30px; } }
+  .sidebar__top-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: auto; }
+    @media (min-width: 1440px) {
+      .sidebar__top-menu {
+        align-items: unset; } }
+  .sidebar__select-list {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    padding-left: 0;
+    list-style: none; }
+    @media (min-width: 1440px) {
+      .sidebar__select-list {
+        display: block; } }
+  .sidebar .select__cross {
+    margin-right: 17px; }
+    @media (min-width: 1440px) {
+      .sidebar .select__cross .cross-btn {
+        display: none; } }
+  .sidebar .btn {
+    background: none;
+    border: none;
+    padding: 0px;
+    cursor: pointer; }
+  .sidebar__flex-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%; }
+  .sidebar__services-select {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0; }
+    .sidebar__services-select .service__select {
+      display: flex;
+      margin-bottom: 32px;
+      align-items: center; }
+      .sidebar__services-select .service__select .service-btn {
+        font-family: "TT Lakes", sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        color: #1b1c21; }
+        .sidebar__services-select .service__select .service-btn:focus {
+          color: #ff3e79; }
+      .sidebar__services-select .service__select:hover:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 4px;
+        height: 32px;
+        background-color: #41f6d7;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px; }
+    .sidebar__services-select > li:last-child {
+      margin-bottom: 0; }
+  .sidebar__bottom {
+    margin-top: auto;
+    margin-bottom: 95px; }
+  .sidebar__bottom-contacts {
+    margin-bottom: 16px; }
+  .sidebar__bottom-select {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .sidebar__bottom-contact {
+    margin-right: 16px;
+    transition: all 0.5s ease; }
+    .sidebar__bottom-contact:hover {
+      transform: scale(1.2); }
+  .sidebar__mail-text {
+    display: inline-block;
+    margin-bottom: 12px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: #1b1c21;
+    text-decoration: none; }
+    .sidebar__mail-text:hover {
+      color: #ff3e79;
+      -webkit-animation: 0.3s tremor ease-out;
+              animation: 0.3s tremor ease-out; }
+
+@-webkit-keyframes tremor {
+  0%,
+  25% {
+    left: -1px;
+    transform: translateX(-4%); }
+  50%,
+  100% {
+    left: 1px;
+    transform: translateX(4%) scale(1.2); } }
+
+@keyframes tremor {
+  0%,
+  25% {
+    left: -1px;
+    transform: translateX(-4%); }
+  50%,
+  100% {
+    left: 1px;
+    transform: translateX(4%) scale(1.2); } }
+  .sidebar__phone-text {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.6px;
+    font-weight: bold;
+    color: #1b1c21;
+    text-decoration: none; }
+    .sidebar__phone-text:hover {
+      -webkit-animation: 0.7s tremor ease-out infinite;
+              animation: 0.7s tremor ease-out infinite; }
+  .sidebar .lang__btn {
+    font-family: TT Lakes, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: #1b1c21;
+    margin-right: 7px; }
+    .sidebar .lang__btn:hover, .sidebar .lang__btn:focus {
+      color: #ff3e79; }
+  .sidebar--active {
+    left: 0px; }
+
+.main-services {
+  background: #f8f8f8; }
+  .main-services .services .service__group {
+    display: flex;
+    align-items: center; }
+    .main-services .services .service__group::before {
+      content: "";
+      width: 4px;
+      height: 40px;
+      background-color: #41f6d7;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px; }
+    @media (min-width: 1440px) {
+      .main-services .services .service__group {
+        align-items: center; } }
+    .main-services .services .service__group .service-title {
+      letter-spacing: -0.6px;
+      line-height: 40px;
+      padding-left: 12px; }
+      @media (min-width: 768px) {
+        .main-services .services .service__group .service-title {
+          padding-left: 20px; } }
+      @media (min-width: 1440px) {
+        .main-services .services .service__group .service-title {
+          margin: 0px;
+          padding-left: 28px; } }
+  @media (min-width: 1440px) {
+    .main-services .services {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 42px; } }
+  @media (min-width: 320px) {
+    .main-services .services .service {
+      display: none; } }
+  @media (min-width: 1440px) {
+    .main-services .services .service {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 380px; } }
+  .main-services .services .service__repair, .main-services .services .service__chekstatus {
+    display: flex;
+    align-items: center;
+    background: #f8f8f8;
+    border: 0;
+    padding: 0; }
+  .main-services .services .service__text-repair, .main-services .services .service__text-chekstatus {
+    font-family: "TT Lakes", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: -0.2px;
+    margin-right: 8px; }
+  .main-services .list {
+    display: flex;
+    overflow: auto;
+    padding-left: 16px;
+    height: 40px;
+    list-style: none; }
+    @media (min-width: 1440px) {
+      .main-services .list {
+        overflow: visible;
+        flex-wrap: wrap; } }
+    .main-services .list__item {
+      font-family: "TT Lakes", sans-serif;
+      white-space: pre;
+      text-align: center;
+      background: #f8f8f8;
+      border: 0;
+      padding: 6px 14px;
+      margin-right: 6px;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      color: #7e7e82; }
+      .main-services .list__item:focus {
+        background: #ffffff;
+        border: 2px solid #b8ffec;
+        border-radius: 6px; }
+  @media (min-width: 768px) {
+    .main-services .content {
+      display: flex; } }
+  @media (min-width: 1440px) {
+    .main-services .content {
+      align-items: unset; } }
+  .main-services .content .read-more-checker {
+    opacity: 0;
+    position: absolute; }
+  .main-services .content .read-more-button {
+    cursor: pointer;
+    display: flex;
+    align-items: stretch;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: 11px;
+    background-repeat: no-repeat;
+    margin-left: 24px;
+    margin-bottom: 15px; }
+    @media (min-width: 1440px) {
+      .main-services .content .read-more-button {
+        margin-left: 40px; } }
+  .main-services .content .read-more-checker ~ .read-more-button:after {
+    content: "Читать далее";
+    display: flex;
+    align-items: center;
+    background-image: url(./static/icondown.svg);
+    background-repeat: no-repeat;
+    padding-left: 16px;
+    font-family: "TT Lakes", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: #1b1c21;
+    font-weight: 600; }
+  .main-services .content .read-more-checker:checked ~ .read-more-button:after {
+    content: "Скрыть";
+    background-image: url(./static/icon.svg);
+    background-repeat: no-repeat; }
+  @media (min-width: 768px) {
+    .main-services .content__picture {
+      margin-top: 14px;
+      margin-right: 16px;
+      border-radius: 6px; }
+      .main-services .content__picture .content-picture {
+        border-radius: 6px; } }
+    @media (min-width: 768px) and (min-width: 1440px) {
+      .main-services .content__picture .content-picture {
+        min-width: 526px;
+        max-height: 289px; } }
+  @media (min-width: 1440px) {
+    .main-services .content__picture {
+      display: flex;
+      flex-grow: 1; } }
+  .main-services .content .text-content {
+    overflow: hidden;
+    transition: max-height 0.6s ease;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: #1b1c21;
+    margin: 24px 16px 16px;
+    font-weight: normal; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .main-services .content .text-content {
+        max-height: 110px; } }
+    @media (min-width: 768px) and (max-width: 1440px) {
+      .main-services .content .text-content {
+        max-height: 135px; } }
+    @media (min-width: 1440px) {
+      .main-services .content .text-content {
+        max-height: 160px; } }
+    @media (min-width: 768px) {
+      .main-services .content .text-content {
+        margin-right: 48px;
+        margin-left: 24px; } }
+    @media (min-width: 1440px) {
+      .main-services .content .text-content {
+        width: 490px;
+        margin-right: 36px;
+        margin-left: 34px; } }
+  .main-services .content .read-more-checker:checked ~ .text-content {
+    max-height: 100vh; }
+
+.header {
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  background-color: #fff; }
+  @media (min-width: 1440px) {
+    .header {
+      display: none; } }
+  .header .menu-select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 88px;
+    border-bottom: 1px solid #d9fff5; }
+    @media (min-width: 768px) {
+      .header .menu-select {
+        padding: 0 8px; } }
+    .header .menu-select .select-list__burger,
+    .header .menu-select .select-list__contacts {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      padding-left: 0px; }
+    .header .menu-select .select-list__burger > button {
+      background: #ffffff;
+      border: white;
+      padding: 0px;
+      margin-left: 16px; }
+    .header .menu-select .select-list__contacts > li {
+      padding-right: 16px; }
+    .header .menu-select .select-list__contacts > li > button {
+      background: #ffffff;
+      border: white;
+      padding: 0px; }
+  @media (min-width: 768px) {
+    .header .menu-select__logo::before {
+      content: "";
+      width: 2px;
+      height: 32px;
+      border-radius: 1px;
+      background-color: #eaeaea;
+      display: inline-block;
+      vertical-align: super;
+      margin-right: 16px; } }
+  .header .list-repair::before {
+    content: "";
+    width: 2px;
+    height: 32px;
+    border-radius: 1px;
+    background-color: #eaeaea;
+    display: inline-block;
+    margin-right: 16px; }
+  .header .list-call,
+  .header .list-chat,
+  .header .list-profile {
+    display: none; }
+    @media (min-width: 768px) {
+      .header .list-call,
+      .header .list-chat,
+      .header .list-profile {
+        display: block; } }
+
+.footer__cps {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  margin-top: 35px;
+  padding: 16px 16px 19px 16px;
+  border-top: 1px #d9fff5 solid; }
+  @media (min-width: 768px) {
+    .footer__cps {
+      flex-direction: row;
+      padding-left: 24px; } }
+  @media (min-width: 1440px) {
+    .footer__cps {
+      padding-left: 32px; } }
+  .footer__cps .footer__text {
+    text-align: center;
+    margin-top: 0;
+    font-family: TT Lakes;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #7e7e82;
+    mix-blend-mode: normal;
+    opacity: 0.72; }
+    .footer__cps .footer__text.information {
+      margin-bottom: 0; }
+    @media (min-width: 768px) {
+      .footer__cps .footer__text.apesong {
+        text-align: left;
+        flex-basis: 33%; } }
+    @media (min-width: 768px) {
+      .footer__cps .footer__text.confidential {
+        text-align: center;
+        flex-basis: 33%; } }
+    @media (min-width: 768px) {
+      .footer__cps .footer__text.information {
+        text-align: right;
+        flex-basis: 33%; } }
+
+.about__service-repair {
+  background: #f8f8f8; }
+  .about__service-repair .repair__block {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(270deg, #f8f8f8 0%, #ffffff 98.61%);
+    height: 80px;
+    border-top: 1px solid #d9fff5;
+    margin-top: 20px;
+    margin-bottom: 16px; }
+    @media (min-width: 768px) {
+      .about__service-repair .repair__block {
+        margin-bottom: 30px; } }
+    .about__service-repair .repair__block .repair__text {
+      margin-left: 16px;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      text-transform: uppercase;
+      color: #7e7e82; }
+      @media (min-width: 768px) {
+        .about__service-repair .repair__block .repair__text {
+          margin-left: 24px; } }
+  .about__service-repair .brands__container {
+    background: #f8f8f8;
+    overflow: hidden; }
+    .about__service-repair .brands__container .swiper-container--brand {
+      position: relative;
+      overflow: hidden;
+      max-height: 175px;
+      background: #f8f8f8;
+      transition: all 0.6s; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .about__service-repair .brands__container .swiper-container--brand {
+          max-height: 100vh; } }
+      .about__service-repair .brands__container .swiper-container--brand .swiper-wrapper {
+        list-style: none;
+        padding: 0px;
+        margin-left: 16px; }
+        @media (min-width: 768px) {
+          .about__service-repair .brands__container .swiper-container--brand .swiper-wrapper {
+            flex-wrap: wrap;
+            margin-left: 24px; } }
+        @media (min-width: 1440px) {
+          .about__service-repair .brands__container .swiper-container--brand .swiper-wrapper {
+            flex-wrap: wrap;
+            margin-left: 32px; } }
+      .about__service-repair .brands__container .swiper-container--brand .swiper-slide {
+        width: 240px; }
+        @media (min-width: 768px) {
+          .about__service-repair .brands__container .swiper-container--brand .swiper-slide {
+            width: 224px;
+            margin-bottom: 16px;
+            margin-right: 24px; } }
+        @media (min-width: 1440px) {
+          .about__service-repair .brands__container .swiper-container--brand .swiper-slide {
+            width: 240px;
+            margin-bottom: 16px;
+            margin-right: 32px; } }
+        .about__service-repair .brands__container .swiper-container--brand .swiper-slide .btn-swipe {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-right: 16px;
+          padding-left: 16px;
+          width: -webkit-fill-available;
+          height: 72px;
+          background: #ffffff;
+          border: 1px solid #eaeaea;
+          box-sizing: border-box;
+          border-radius: 6px; }
+      .about__service-repair .brands__container .swiper-container--brand .swipe__pagination {
+        position: unset;
+        margin-top: 16px; }
+        @media (min-width: 768px) {
+          .about__service-repair .brands__container .swiper-container--brand .swipe__pagination {
+            display: none; } }
+      .about__service-repair .brands__container .swiper-container--brand .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        background-color: #dddddd; }
+      .about__service-repair .brands__container .swiper-container--brand .swiper-pagination-bullet-active {
+        background-color: #b5b6bc; }
+    .about__service-repair .brands__container .show__more,
+    .about__service-repair .brands__container .hide__all {
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      margin-left: 24px;
+      border: 0px;
+      padding: 0px;
+      background: #f8f8f8;
+      font-family: "TT Lakes", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      color: #1b1c21;
+      margin: 0px 0px 0px 16px; }
+      @media (min-width: 320px) {
+        .about__service-repair .brands__container .show__more,
+        .about__service-repair .brands__container .hide__all {
+          display: none; } }
+    @media (min-width: 768px) {
+      .about__service-repair .brands__container .show__more {
+        display: flex;
+        margin-left: 32px; } }
+    @media (min-width: 768px) {
+      .about__service-repair .brands__container .hide__all {
+        display: none;
+        margin-left: 32px; } }
+    @media (min-width: 1440px) {
+      .about__service-repair .brands__container .show__more {
+        margin-left: 39px; } }
+    @media (min-width: 1440px) {
+      .about__service-repair .brands__container .hide__all {
+        margin-left: 39px; } }
+    .about__service-repair .brands__container .read__arrows {
+      margin-right: 16px; }
+  .about__service-repair .technique__container {
+    background: #f8f8f8;
+    overflow: hidden; }
+    .about__service-repair .technique__container .swiper-container--technique {
+      position: relative;
+      overflow: hidden;
+      max-height: 175px;
+      background: #f8f8f8;
+      transition: all 0.6s; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .about__service-repair .technique__container .swiper-container--technique {
+          max-height: 100vh; } }
+      .about__service-repair .technique__container .swiper-container--technique .swiper-wrapper {
+        list-style: none;
+        padding: 0px;
+        margin-left: 16px; }
+        @media (min-width: 768px) {
+          .about__service-repair .technique__container .swiper-container--technique .swiper-wrapper {
+            flex-wrap: wrap;
+            margin-left: 24px; } }
+        @media (min-width: 1440px) {
+          .about__service-repair .technique__container .swiper-container--technique .swiper-wrapper {
+            flex-wrap: wrap;
+            margin-left: 32px; } }
+      .about__service-repair .technique__container .swiper-container--technique .swiper-slide {
+        width: 240px; }
+        @media (min-width: 768px) {
+          .about__service-repair .technique__container .swiper-container--technique .swiper-slide {
+            width: 224px;
+            margin-bottom: 16px;
+            margin-right: 24px; } }
+        @media (min-width: 1440px) {
+          .about__service-repair .technique__container .swiper-container--technique .swiper-slide {
+            width: 240px;
+            margin-bottom: 16px;
+            margin-right: 32px; } }
+        .about__service-repair .technique__container .swiper-container--technique .swiper-slide .btn-swipe {
+          display: flex;
+          justify-content: space-between;
+          padding-right: 16px;
+          padding-left: 16px;
+          width: inherit;
+          height: 160px;
+          background: #ffffff;
+          border: 1px solid #eaeaea;
+          box-sizing: border-box;
+          border-radius: 6px; }
+          .about__service-repair .technique__container .swiper-container--technique .swiper-slide .btn-swipe .rep__text {
+            align-self: flex-start;
+            margin-top: 16px;
+            font-family: TT Lakes;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.2px;
+            color: #1b1c21; }
+          .about__service-repair .technique__container .swiper-container--technique .swiper-slide .btn-swipe .arrow {
+            align-self: flex-end;
+            margin-bottom: 16px; }
+      .about__service-repair .technique__container .swiper-container--technique .swiper-pagination--technique {
+        position: unset;
+        margin-top: 16px;
+        text-align: center;
+        transition: 0.3s opacity;
+        transform: translate3d(0, 0, 0);
+        z-index: 10; }
+        @media (min-width: 768px) {
+          .about__service-repair .technique__container .swiper-container--technique .swiper-pagination--technique {
+            display: none; } }
+      .about__service-repair .technique__container .swiper-container--technique .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        background-color: #dddddd; }
+      .about__service-repair .technique__container .swiper-container--technique .swiper-pagination-bullet-active {
+        background-color: #b5b6bc; }
+    .about__service-repair .technique__container .show__more--technique,
+    .about__service-repair .technique__container .hide__all--technique {
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      margin-left: 24px;
+      border: 0px;
+      padding: 0px;
+      background: #f8f8f8;
+      font-family: "TT Lakes", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      color: #1b1c21;
+      margin: 0px 0px 0px 16px; }
+      @media (min-width: 320px) {
+        .about__service-repair .technique__container .show__more--technique,
+        .about__service-repair .technique__container .hide__all--technique {
+          display: none; } }
+    @media (min-width: 768px) {
+      .about__service-repair .technique__container .show__more--technique {
+        display: flex;
+        margin-left: 32px; } }
+    @media (min-width: 768px) {
+      .about__service-repair .technique__container .hide__all--technique {
+        display: none;
+        margin-left: 32px; } }
+    @media (min-width: 1440px) {
+      .about__service-repair .technique__container .show__more--technique {
+        margin-left: 39px; } }
+    @media (min-width: 1440px) {
+      .about__service-repair .technique__container .hide__all--technique {
+        margin-left: 39px; } }
+    .about__service-repair .technique__container .read__arrows {
+      margin-right: 16px; }
+  .about__service-repair .prices__container {
+    background: #f8f8f8;
+    overflow: hidden;
+    padding: 0 16px; }
+    @media (min-width: 768px) {
+      .about__service-repair .prices__container {
+        padding: 0 24px; } }
+    @media (min-width: 1440px) {
+      .about__service-repair .prices__container {
+        padding: 0 32px; } }
+    .about__service-repair .prices__container .swiper-container--prices {
+      position: relative;
+      overflow: hidden;
+      background: #f8f8f8; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .about__service-repair .prices__container .swiper-container--prices {
+          max-height: none; } }
+      .about__service-repair .prices__container .swiper-container--prices .table__caption {
+        width: 100%; }
+        @media (min-width: 320px) and (max-width: 767px) {
+          .about__service-repair .prices__container .swiper-container--prices .table__caption {
+            display: none; } }
+        @media (min-width: 768px) {
+          .about__service-repair .prices__container .swiper-container--prices .table__caption {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 16px;
+            padding-right: 16px; }
+            .about__service-repair .prices__container .swiper-container--prices .table__caption .caption__text {
+              font-size: 14px;
+              line-height: 16px;
+              color: #7e7e82;
+              mix-blend-mode: normal;
+              opacity: 0.72;
+              padding-bottom: 16px; }
+              .about__service-repair .prices__container .swiper-container--prices .table__caption .caption__text.rep {
+                flex-basis: 53%;
+                padding-right: 12px; }
+              .about__service-repair .prices__container .swiper-container--prices .table__caption .caption__text.price {
+                flex-basis: 13.5%;
+                padding-right: 12px; }
+              .about__service-repair .prices__container .swiper-container--prices .table__caption .caption__text.temp {
+                flex-basis: 14%;
+                padding-right: 12px; }
+            .about__service-repair .prices__container .swiper-container--prices .table__caption .caption__empty {
+              visibility: hidden;
+              width: 119px;
+              height: 16px; } }
+      .about__service-repair .prices__container .swiper-container--prices .swiper-wrapper {
+        list-style: none;
+        padding: 0px;
+        margin-top: 0; }
+        @media (min-width: 768px) {
+          .about__service-repair .prices__container .swiper-container--prices .swiper-wrapper {
+            flex-direction: column; } }
+        @media (min-width: 1440px) {
+          .about__service-repair .prices__container .swiper-container--prices .swiper-wrapper {
+            flex-wrap: wrap; } }
+      .about__service-repair .prices__container .swiper-container--prices .swiper-slide {
+        width: 260px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-right: 16px;
+        padding-left: 16px;
+        height: 200px;
+        background: #ffffff;
+        border: 1px solid #eaeaea;
+        box-sizing: border-box;
+        border-radius: 6px; }
+        @media (min-width: 768px) {
+          .about__service-repair .prices__container .swiper-container--prices .swiper-slide {
+            width: 100%;
+            height: 64px;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border: unset;
+            border-bottom: 1px solid #eaeaea;
+            border-radius: unset; } }
+        @media (min-width: 1440px) {
+          .about__service-repair .prices__container .swiper-container--prices .swiper-slide {
+            height: 64px; } }
+        .about__service-repair .prices__container .swiper-container--prices .swiper-slide .price__service {
+          display: flex;
+          flex-direction: column; }
+          @media (min-width: 768px) {
+            .about__service-repair .prices__container .swiper-container--prices .swiper-slide .price__service.service__block {
+              flex-basis: 53%; } }
+          @media (min-width: 768px) {
+            .about__service-repair .prices__container .swiper-container--prices .swiper-slide .price__service.price__block {
+              flex-basis: 13.5%; } }
+          @media (min-width: 768px) {
+            .about__service-repair .prices__container .swiper-container--prices .swiper-slide .price__service.term__block {
+              flex-basis: 14%; } }
+          .about__service-repair .prices__container .swiper-container--prices .swiper-slide .price__service .price-service__text-title {
+            font-size: 14px;
+            line-height: 16px;
+            color: #7e7e82;
+            mix-blend-mode: normal;
+            opacity: 0.72; }
+            @media (min-width: 768px) {
+              .about__service-repair .prices__container .swiper-container--prices .swiper-slide .price__service .price-service__text-title {
+                display: none; } }
+          .about__service-repair .prices__container .swiper-container--prices .swiper-slide .price__service .price-service__text-about {
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: 0.2px;
+            color: #1b1c21;
+            padding-top: 4px; }
+        .about__service-repair .prices__container .swiper-container--prices .swiper-slide .order__btn {
+          position: absolute;
+          cursor: pointer;
+          left: 125px;
+          top: 152px;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          height: 32px;
+          width: 119px;
+          background: #ff3e79;
+          border: 0;
+          box-sizing: border-box;
+          border-radius: 16px;
+          transition: all 0.6s; }
+          .about__service-repair .prices__container .swiper-container--prices .swiper-slide .order__btn:hover {
+            background-color: #fa88aa; }
+          .about__service-repair .prices__container .swiper-container--prices .swiper-slide .order__btn:focus {
+            background-color: #f50049; }
+          @media (min-width: 768px) {
+            .about__service-repair .prices__container .swiper-container--prices .swiper-slide .order__btn {
+              position: unset;
+              left: unset;
+              top: unset; } }
+          .about__service-repair .prices__container .swiper-container--prices .swiper-slide .order__btn .order__text {
+            font-family: "TT Lakes";
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 24px;
+            letter-spacing: -0.15px;
+            text-transform: uppercase;
+            color: #ffffff; }
+      .about__service-repair .prices__container .swiper-container--prices .swiper-pagination--prices {
+        position: unset;
+        margin-top: 16px;
+        text-align: center;
+        transition: 0.3s opacity;
+        transform: translate3d(0, 0, 0);
+        z-index: 10; }
+        @media (min-width: 768px) {
+          .about__service-repair .prices__container .swiper-container--prices .swiper-pagination--prices {
+            display: none; } }
+      .about__service-repair .prices__container .swiper-container--prices .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        background-color: #dddddd; }
+      .about__service-repair .prices__container .swiper-container--prices .swiper-pagination-bullet-active {
+        background-color: #b5b6bc; }
+    .about__service-repair .prices__container .offer__block .offer__text {
+      font-family: "TT Lakes";
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+      color: #1b1c21; }
+      @media (min-width: 768px) {
+        .about__service-repair .prices__container .offer__block .offer__text {
+          width: 421px; } }
+    .about__service-repair .prices__container .offer__block .offer__link {
+      position: relative;
+      font-family: "TT Lakes";
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      text-align: left;
+      font-weight: 500;
+      text-decoration: none;
+      padding-right: 16px;
+      color: #1b1c21;
+      transition: color 0.3s; }
+      .about__service-repair .prices__container .offer__block .offer__link:hover {
+        color: #ff3e79; }
+      .about__service-repair .prices__container .offer__block .offer__link::after {
+        content: "";
+        position: absolute;
+        right: 4px;
+        bottom: 4px;
+        display: block;
+        width: 7.5px;
+        height: 12px;
+        background-image: url(./static/Line-right.svg); }
+
+.modal-window {
+  position: fixed;
+  top: 0;
+  left: 110%;
+  z-index: 71;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100vh;
+  border-left: 1px solid #d9fff5;
+  transition: all 0.3s; }
+  @media (min-width: 520px) {
+    .modal-window {
+      width: 440px;
+      box-shadow: 5px 0 50px 10px #7e7e82; } }
+  .modal-window .modal__block {
+    height: 100%; }
+    .modal-window .modal__block .modal-btn__close {
+      background: none;
+      border: none;
+      padding: 24px 16px 0px; }
+      @media (min-width: 520px) {
+        .modal-window .modal__block .modal-btn__close {
+          position: absolute;
+          left: -94px;
+          top: -8px;
+          z-index: 71; } }
+    .modal-window .modal__block .modal__head {
+      display: flex;
+      align-items: center; }
+      .modal-window .modal__block .modal__head .title {
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: -0.6px;
+        color: #1b1c21;
+        padding-left: 14px; }
+      .modal-window .modal__block .modal__head::before {
+        content: "";
+        width: 4px;
+        height: 40px;
+        background-color: #41f6d7;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px; }
+    .modal-window .modal__block .form__modal {
+      display: flex;
+      flex-direction: column;
+      padding: 0 16px; }
+      .modal-window .modal__block .form__modal .modal__input {
+        width: 100%;
+        height: 48px;
+        padding: 12px 16px;
+        margin-bottom: 16px;
+        border: 1px solid #eaeaea;
+        border-radius: 8px;
+        font-family: "TT Lakes", sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        color: #b5b6bc; }
+      .modal-window .modal__block .form__modal .feed__text {
+        height: 118px;
+        padding: 12px 16px;
+        border: 1px solid #eaeaea;
+        border-radius: 8px;
+        font-family: "TT Lakes", sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        color: #b5b6bc; }
+      .modal-window .modal__block .form__modal .privacy__text {
+        font-family: "TT Lakes", sans-serif;
+        font-size: 14px;
+        line-height: 16px;
+        color: #7e7e82; }
+        .modal-window .modal__block .form__modal .privacy__text .priv-link {
+          text-decoration: none;
+          color: #ff3e79; }
+      .modal-window .modal__block .form__modal .mod-btn__send {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 119px;
+        height: 32px;
+        margin-left: auto;
+        padding: 4px 8px 4px 12px;
+        border-radius: 16px;
+        border: none;
+        background-color: #ff3e79;
+        transition: all 0.3s; }
+        .modal-window .modal__block .form__modal .mod-btn__send .mod-btn__text {
+          font-family: "TT Lakes", sans-serif;
+          text-transform: uppercase;
+          color: #fff;
+          font-size: 12px;
+          letter-spacing: -0.15px;
+          font-weight: 700; }
+  .modal-window--active {
+    left: 0px; }
+    @media (min-width: 520px) {
+      .modal-window--active {
+        left: calc(100% - 440px); } }
+
+
+/*# sourceMappingURL=style.css.map*/
