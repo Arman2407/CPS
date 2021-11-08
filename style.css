@@ -45,7 +45,6 @@ body {
   font-family: "TT Lakes", sans-serif;
   margin: 0px;
   min-width: 320px;
-  scroll-behavior: smooth;
   background-color: #f8f8f8; }
 
 @media (min-width: 1440px) {
@@ -290,13 +289,13 @@ body {
     margin-right: 8px; }
   .main-services .list {
     display: flex;
-    overflow: auto;
+    overflow-x: auto;
     padding-left: 16px;
     height: 40px;
     list-style: none; }
     @media (min-width: 1440px) {
       .main-services .list {
-        overflow: visible;
+        overflow-x: visible;
         flex-wrap: wrap; } }
     .main-services .list__item {
       font-family: "TT Lakes", sans-serif;
@@ -526,40 +525,40 @@ body {
   .about__service-repair .brands__container {
     background: #f8f8f8;
     overflow: hidden; }
-    .about__service-repair .brands__container .swiper-container--brand {
+    .about__service-repair .brands__container .swiper-container__brand {
       position: relative;
       overflow: hidden;
       max-height: 175px;
       background: #f8f8f8;
       transition: all 0.6s; }
       @media (min-width: 320px) and (max-width: 767px) {
-        .about__service-repair .brands__container .swiper-container--brand {
+        .about__service-repair .brands__container .swiper-container__brand {
           max-height: 100vh; } }
-      .about__service-repair .brands__container .swiper-container--brand .swiper-wrapper {
+      .about__service-repair .brands__container .swiper-container__brand .swiper-wrapper {
         list-style: none;
         padding: 0px;
         margin-left: 16px; }
         @media (min-width: 768px) {
-          .about__service-repair .brands__container .swiper-container--brand .swiper-wrapper {
+          .about__service-repair .brands__container .swiper-container__brand .swiper-wrapper {
             flex-wrap: wrap;
             margin-left: 24px; } }
         @media (min-width: 1440px) {
-          .about__service-repair .brands__container .swiper-container--brand .swiper-wrapper {
+          .about__service-repair .brands__container .swiper-container__brand .swiper-wrapper {
             flex-wrap: wrap;
             margin-left: 32px; } }
-      .about__service-repair .brands__container .swiper-container--brand .swiper-slide {
+      .about__service-repair .brands__container .swiper-container__brand .swiper-slide {
         width: 240px; }
         @media (min-width: 768px) {
-          .about__service-repair .brands__container .swiper-container--brand .swiper-slide {
+          .about__service-repair .brands__container .swiper-container__brand .swiper-slide {
             width: 224px;
             margin-bottom: 16px;
             margin-right: 24px; } }
         @media (min-width: 1440px) {
-          .about__service-repair .brands__container .swiper-container--brand .swiper-slide {
+          .about__service-repair .brands__container .swiper-container__brand .swiper-slide {
             width: 240px;
             margin-bottom: 16px;
             margin-right: 32px; } }
-        .about__service-repair .brands__container .swiper-container--brand .swiper-slide .btn-swipe {
+        .about__service-repair .brands__container .swiper-container__brand .swiper-slide .btn-swipe {
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -571,21 +570,23 @@ body {
           border: 1px solid #eaeaea;
           box-sizing: border-box;
           border-radius: 6px; }
-      .about__service-repair .brands__container .swiper-container--brand .swipe__pagination {
+      .about__service-repair .brands__container .swiper-container__brand .swipe__pagination {
         position: unset;
         margin-top: 16px; }
         @media (min-width: 768px) {
-          .about__service-repair .brands__container .swiper-container--brand .swipe__pagination {
+          .about__service-repair .brands__container .swiper-container__brand .swipe__pagination {
             display: none; } }
-      .about__service-repair .brands__container .swiper-container--brand .swiper-pagination-bullet {
+      .about__service-repair .brands__container .swiper-container__brand .swiper-pagination-bullet {
         width: 12px;
         height: 12px;
         background-color: #dddddd; }
-      .about__service-repair .brands__container .swiper-container--brand .swiper-pagination-bullet-active {
+      .about__service-repair .brands__container .swiper-container__brand .swiper-pagination-bullet-active {
         background-color: #b5b6bc; }
-    .about__service-repair .brands__container .show__more,
-    .about__service-repair .brands__container .hide__all {
-      display: flex;
+      .about__service-repair .brands__container .swiper-container__brand--active {
+        overflow: visible;
+        max-height: 100vh; }
+    .about__service-repair .brands__container .show__more {
+      display: none;
       cursor: pointer;
       align-items: center;
       margin-left: 24px;
@@ -600,63 +601,78 @@ body {
       letter-spacing: -0.2px;
       color: #1b1c21;
       margin: 0px 0px 0px 16px; }
-      @media (min-width: 320px) {
-        .about__service-repair .brands__container .show__more,
+      @media (min-width: 768px) {
+        .about__service-repair .brands__container .show__more {
+          display: flex;
+          margin-left: 32px; } }
+      @media (min-width: 1440px) {
+        .about__service-repair .brands__container .show__more {
+          margin-left: 39px; } }
+      .about__service-repair .brands__container .show__more--none {
+        display: none; }
+    .about__service-repair .brands__container .hide__all {
+      display: none;
+      cursor: pointer;
+      align-items: center;
+      margin-left: 24px;
+      border: 0px;
+      padding: 0px;
+      background: #f8f8f8;
+      font-family: "TT Lakes", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      color: #1b1c21;
+      margin: 0px 0px 0px 16px; }
+      @media (min-width: 768px) {
         .about__service-repair .brands__container .hide__all {
-          display: none; } }
-    @media (min-width: 768px) {
-      .about__service-repair .brands__container .show__more {
-        display: flex;
-        margin-left: 32px; } }
-    @media (min-width: 768px) {
-      .about__service-repair .brands__container .hide__all {
-        display: none;
-        margin-left: 32px; } }
-    @media (min-width: 1440px) {
-      .about__service-repair .brands__container .show__more {
-        margin-left: 39px; } }
-    @media (min-width: 1440px) {
-      .about__service-repair .brands__container .hide__all {
-        margin-left: 39px; } }
+          margin-left: 32px; }
+          .about__service-repair .brands__container .hide__all--active {
+            display: block; } }
+      @media (min-width: 1440px) {
+        .about__service-repair .brands__container .hide__all {
+          margin-left: 39px; } }
     .about__service-repair .brands__container .read__arrows {
       margin-right: 16px; }
   .about__service-repair .technique__container {
     background: #f8f8f8;
     overflow: hidden; }
-    .about__service-repair .technique__container .swiper-container--technique {
+    .about__service-repair .technique__container .swiper-container__technique {
       position: relative;
       overflow: hidden;
       max-height: 175px;
       background: #f8f8f8;
       transition: all 0.6s; }
       @media (min-width: 320px) and (max-width: 767px) {
-        .about__service-repair .technique__container .swiper-container--technique {
+        .about__service-repair .technique__container .swiper-container__technique {
           max-height: 100vh; } }
-      .about__service-repair .technique__container .swiper-container--technique .swiper-wrapper {
+      .about__service-repair .technique__container .swiper-container__technique .swiper-wrapper {
         list-style: none;
         padding: 0px;
         margin-left: 16px; }
         @media (min-width: 768px) {
-          .about__service-repair .technique__container .swiper-container--technique .swiper-wrapper {
+          .about__service-repair .technique__container .swiper-container__technique .swiper-wrapper {
             flex-wrap: wrap;
             margin-left: 24px; } }
         @media (min-width: 1440px) {
-          .about__service-repair .technique__container .swiper-container--technique .swiper-wrapper {
+          .about__service-repair .technique__container .swiper-container__technique .swiper-wrapper {
             flex-wrap: wrap;
             margin-left: 32px; } }
-      .about__service-repair .technique__container .swiper-container--technique .swiper-slide {
+      .about__service-repair .technique__container .swiper-container__technique .swiper-slide {
         width: 240px; }
         @media (min-width: 768px) {
-          .about__service-repair .technique__container .swiper-container--technique .swiper-slide {
+          .about__service-repair .technique__container .swiper-container__technique .swiper-slide {
             width: 224px;
             margin-bottom: 16px;
             margin-right: 24px; } }
         @media (min-width: 1440px) {
-          .about__service-repair .technique__container .swiper-container--technique .swiper-slide {
+          .about__service-repair .technique__container .swiper-container__technique .swiper-slide {
             width: 240px;
             margin-bottom: 16px;
             margin-right: 32px; } }
-        .about__service-repair .technique__container .swiper-container--technique .swiper-slide .btn-swipe {
+        .about__service-repair .technique__container .swiper-container__technique .swiper-slide .btn-swipe {
           display: flex;
           justify-content: space-between;
           padding-right: 16px;
@@ -667,7 +683,7 @@ body {
           border: 1px solid #eaeaea;
           box-sizing: border-box;
           border-radius: 6px; }
-          .about__service-repair .technique__container .swiper-container--technique .swiper-slide .btn-swipe .rep__text {
+          .about__service-repair .technique__container .swiper-container__technique .swiper-slide .btn-swipe .rep__text {
             align-self: flex-start;
             margin-top: 16px;
             font-family: TT Lakes;
@@ -675,10 +691,10 @@ body {
             line-height: 24px;
             letter-spacing: -0.2px;
             color: #1b1c21; }
-          .about__service-repair .technique__container .swiper-container--technique .swiper-slide .btn-swipe .arrow {
+          .about__service-repair .technique__container .swiper-container__technique .swiper-slide .btn-swipe .arrow {
             align-self: flex-end;
             margin-bottom: 16px; }
-      .about__service-repair .technique__container .swiper-container--technique .swiper-pagination--technique {
+      .about__service-repair .technique__container .swiper-container__technique .swiper-pagination__technique {
         position: unset;
         margin-top: 16px;
         text-align: center;
@@ -686,17 +702,19 @@ body {
         transform: translate3d(0, 0, 0);
         z-index: 10; }
         @media (min-width: 768px) {
-          .about__service-repair .technique__container .swiper-container--technique .swiper-pagination--technique {
+          .about__service-repair .technique__container .swiper-container__technique .swiper-pagination__technique {
             display: none; } }
-      .about__service-repair .technique__container .swiper-container--technique .swiper-pagination-bullet {
+      .about__service-repair .technique__container .swiper-container__technique .swiper-pagination-bullet {
         width: 12px;
         height: 12px;
         background-color: #dddddd; }
-      .about__service-repair .technique__container .swiper-container--technique .swiper-pagination-bullet-active {
+      .about__service-repair .technique__container .swiper-container__technique .swiper-pagination-bullet-active {
         background-color: #b5b6bc; }
-    .about__service-repair .technique__container .show__more--technique,
-    .about__service-repair .technique__container .hide__all--technique {
-      display: flex;
+      .about__service-repair .technique__container .swiper-container__technique--active {
+        overflow: visible;
+        max-height: 100vh; }
+    .about__service-repair .technique__container .show__more__technique {
+      display: none;
       cursor: pointer;
       align-items: center;
       margin-left: 24px;
@@ -711,24 +729,39 @@ body {
       letter-spacing: -0.2px;
       color: #1b1c21;
       margin: 0px 0px 0px 16px; }
-      @media (min-width: 320px) {
-        .about__service-repair .technique__container .show__more--technique,
-        .about__service-repair .technique__container .hide__all--technique {
-          display: none; } }
-    @media (min-width: 768px) {
-      .about__service-repair .technique__container .show__more--technique {
-        display: flex;
-        margin-left: 32px; } }
-    @media (min-width: 768px) {
-      .about__service-repair .technique__container .hide__all--technique {
-        display: none;
-        margin-left: 32px; } }
-    @media (min-width: 1440px) {
-      .about__service-repair .technique__container .show__more--technique {
-        margin-left: 39px; } }
-    @media (min-width: 1440px) {
-      .about__service-repair .technique__container .hide__all--technique {
-        margin-left: 39px; } }
+      @media (min-width: 768px) {
+        .about__service-repair .technique__container .show__more__technique {
+          display: flex;
+          margin-left: 32px; } }
+      @media (min-width: 1440px) {
+        .about__service-repair .technique__container .show__more__technique {
+          margin-left: 39px; } }
+      .about__service-repair .technique__container .show__more__technique--none {
+        display: none; }
+    .about__service-repair .technique__container .hide__all__technique {
+      display: none;
+      cursor: pointer;
+      align-items: center;
+      margin-left: 24px;
+      border: 0px;
+      padding: 0px;
+      background: #f8f8f8;
+      font-family: "TT Lakes", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      color: #1b1c21;
+      margin: 0px 0px 0px 16px; }
+      @media (min-width: 768px) {
+        .about__service-repair .technique__container .hide__all__technique {
+          margin-left: 32px; }
+          .about__service-repair .technique__container .hide__all__technique--active {
+            display: block; } }
+      @media (min-width: 1440px) {
+        .about__service-repair .technique__container .hide__all__technique {
+          margin-left: 39px; } }
     .about__service-repair .technique__container .read__arrows {
       margin-right: 16px; }
   .about__service-repair .prices__container {
