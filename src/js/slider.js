@@ -8,11 +8,13 @@ export function sliderSwiper () {
    const showBtn = document.querySelector('.show__more'); 
    const hideBtn = document.querySelector('.hide__all');
 
-   const showBtnTech = document.querySelector('.show__more--technique');
-   const hideBtnTech = document.querySelector('.hide__all--technique');
+   const myClientWidth = document.documentElement.clientWidth;
+
+   const showBtnTech = document.querySelector('.show__more__technique');
+   const hideBtnTech = document.querySelector('.hide__all__technique');
    
-   const brandBlock = document.querySelector('.swiper-container--brand'); 
-   const texhBlock = document.querySelector('.swiper-container--technique');
+   const brandBlock = document.querySelector('.swiper-container__brand'); 
+   const texhBlock = document.querySelector('.swiper-container__technique');
 
    catalogSliderInit();
    window.addEventListener('resize', checkMediaSize);
@@ -36,7 +38,7 @@ export function sliderSwiper () {
 
   function catalogSliderInit () {
     if (!catalogSlider) {
-       catalogSlider = new Swiper(".swiper-container--brand", {
+       catalogSlider = new Swiper(".swiper-container__brand", {
          slidesPerView: "auto",
          spaceBetween: 16,
          pagination: {
@@ -47,11 +49,11 @@ export function sliderSwiper () {
      }
 
      if (!catalogSliderSecond) {
-       catalogSliderSecond = new Swiper(".swiper-container--technique", {
+       catalogSliderSecond = new Swiper(".swiper-container__technique", {
          slidesPerView: "auto",
          spaceBetween: 16,
          pagination: {
-             el: ".swiper-pagination--technique",
+             el: ".swiper-pagination__technique",
              clickable: true,
          },
        });
@@ -88,50 +90,46 @@ export function sliderSwiper () {
    
    // Показать / скрыть
    showBtn.addEventListener('click', function () {
-     if (document.documentElement.clientWidth >= 768) {
-       brandBlock.style.overflow = 'visible';
-       brandBlock.style.maxHeight = '100vh';
-       showBtn.style.display = 'none';
-       hideBtn.style.display = 'block';
+     if (myClientWidth >= 768) {
+       brandBlock.classList.add('swiper-container__brand--active');
+       showBtn.classList.toggle('show__more--none');
+       hideBtn.classList.toggle('hide__all--active');
      }
    });
 
    hideBtn.addEventListener('click', function () {
-     if (document.documentElement.clientWidth >= 768) {
-       brandBlock.style.overflow = 'hidden';
-       brandBlock.style.maxHeight = '175px';
-       showBtn.style.display = 'block';
-       hideBtn.style.display = 'none';
+     if (myClientWidth >= 768) {
+       brandBlock.classList.remove('swiper-container__brand--active');
+       showBtn.classList.toggle('show__more--none');
+       hideBtn.classList.toggle('hide__all--active');
      }
    })
 
    showBtnTech.addEventListener('click', function () {
-     if (document.documentElement.clientWidth >= 768) {
-       texhBlock.style.overflow = 'visible';
-       texhBlock.style.maxHeight =  '100vh';
-       showBtnTech.style.display = 'none';
-       hideBtnTech.style.display = 'block';
+     if (myClientWidth >= 768) {
+       texhBlock.classList.add('swiper-container__technique--active');
+       showBtnTech.classList.toggle('show__more__technique--none');
+       hideBtnTech.classList.toggle('hide__all__technique--active');
      } 
    });
 
    hideBtnTech.addEventListener('click', function () {
-     if (document.documentElement.clientWidth >= 768) {
-      texhBlock.style.overflow = 'hidden';
-      texhBlock.style.maxHeight = '175px'
-      showBtnTech.style.display = 'block';
-      hideBtnTech.style.display = 'none';
+     if (myClientWidth >= 768) {
+      texhBlock.classList.remove('swiper-container__technique--active');
+      showBtnTech.classList.toggle('show__more__technique--none');
+      hideBtnTech.classList.toggle('hide__all__technique--active');
      }
    });
   
    function hideBtns () {
-    showBtn.style.display = "none";
-    hideBtn.style.display = "none";
-    hideBtnTech.style.display = 'none';
-    showBtnTech.style.display = 'none';
+    showBtn.classList.add('show__more--none');
+    hideBtn.classList.remove('hide__all--active');
+    hideBtnTech.classList.remove('hide__all__technique--active');
+    showBtnTech.classList.add('show__more__technique--none');
   }
 
   function showBtns () {
-    showBtn.style.display = "block";
-    showBtnTech.style.display = 'block';
+    showBtn.classList.remove('show__more--none');
+    showBtnTech.classList.remove('show__more__technique--none');
   }
 } 

@@ -32,7 +32,7 @@
     background: #f8f8f8;
     overflow: hidden;
 
-    .swiper-container--brand {
+    .swiper-container__brand {
       position: relative;
       overflow: hidden;
       max-height: 175px;
@@ -103,10 +103,14 @@
       .swiper-pagination-bullet-active {
         background-color: #b5b6bc;
       }
+      &--active {
+        overflow: visible;
+        max-height: 100vh;
+      }
     }
-    .show__more,
-    .hide__all {
-      display: flex;
+
+    .show__more {
+      display: none;
       cursor: pointer;
       align-items: center;
       margin-left: 24px;
@@ -122,32 +126,49 @@
       color: #1b1c21;
       margin: 0px 0px 0px 16px;
 
-      @media (min-width: 320px) {
-        display: none;
-      }
-    }
-    .show__more {
       @media (min-width: 768px) {
         display: flex;
         margin-left: 32px;
       }
-    }
-    .hide__all {
-      @media (min-width: 768px) {
+
+      @media (min-width: 1440px) {
+        margin-left: 39px;
+      }
+
+      &--none {
         display: none;
-        margin-left: 32px;
-      }
-    }
-    .show__more {
-      @media (min-width: 1440px) {
-        margin-left: 39px;
       }
     }
     .hide__all {
+      display: none;
+      cursor: pointer;
+      align-items: center;
+      margin-left: 24px;
+      border: 0px;
+      padding: 0px;
+      background: #f8f8f8;
+      font-family: "TT Lakes", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      color: #1b1c21;
+      margin: 0px 0px 0px 16px;
+
+      @media (min-width: 768px) {
+        margin-left: 32px;
+
+        &--active {
+          display: block;
+        }
+      }
+
       @media (min-width: 1440px) {
         margin-left: 39px;
       }
     }
+
     .read__arrows {
       margin-right: 16px;
     }
@@ -156,7 +177,7 @@
   .technique__container {
     background: #f8f8f8;
     overflow: hidden;
-    .swiper-container--technique {
+    .swiper-container__technique {
       position: relative;
       overflow: hidden;
       max-height: 175px;
@@ -225,7 +246,7 @@
           }
         }
       }
-      .swiper-pagination--technique {
+      .swiper-pagination__technique {
         position: unset;
         margin-top: 16px;
         text-align: center;
@@ -245,10 +266,13 @@
       .swiper-pagination-bullet-active {
         background-color: #b5b6bc;
       }
+      &--active {
+        overflow: visible;
+        max-height: 100vh;
+      }
     }
-    .show__more--technique,
-    .hide__all--technique {
-      display: flex;
+    .show__more__technique {
+      display: none;
       cursor: pointer;
       align-items: center;
       margin-left: 24px;
@@ -264,28 +288,44 @@
       color: #1b1c21;
       margin: 0px 0px 0px 16px;
 
-      @media (min-width: 320px) {
-        display: none;
-      }
-    }
-    .show__more--technique {
       @media (min-width: 768px) {
         display: flex;
         margin-left: 32px;
       }
-    }
-    .hide__all--technique {
-      @media (min-width: 768px) {
-        display: none;
-        margin-left: 32px;
-      }
-    }
-    .show__more--technique {
+
       @media (min-width: 1440px) {
         margin-left: 39px;
       }
+
+      &--none {
+        display: none;
+      }
     }
-    .hide__all--technique {
+    .hide__all__technique {
+      display: none;
+      cursor: pointer;
+      align-items: center;
+      margin-left: 24px;
+      border: 0px;
+      padding: 0px;
+      background: #f8f8f8;
+      font-family: "TT Lakes", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      color: #1b1c21;
+      margin: 0px 0px 0px 16px;
+
+      @media (min-width: 768px) {
+        margin-left: 32px;
+
+        &--active {
+          display: block;
+        }
+      }
+
       @media (min-width: 1440px) {
         margin-left: 39px;
       }
@@ -466,7 +506,7 @@
           }
 
           &:focus {
-            background-color: #f50049;;
+            background-color: #f50049;
           }
 
           @media (min-width: 768px) {

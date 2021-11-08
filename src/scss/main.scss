@@ -77,13 +77,13 @@
 
   .list {
     display: flex;
-    overflow: auto;
+    overflow-x: auto;
     padding-left: 16px;
     height: 40px;
     list-style: none;
 
     @media (min-width: 1440px) {
-      overflow: visible;
+      overflow-x: visible;
       flex-wrap: wrap;
     }
 
